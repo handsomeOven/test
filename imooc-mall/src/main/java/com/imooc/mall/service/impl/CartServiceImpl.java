@@ -32,14 +32,11 @@ public class CartServiceImpl implements CartService {
         //CartVO中totalPrice字段没有值
         for (int i = 0; i < cartVOS.size(); i++) {
             CartVO cartVO = cartVOS.get(i);
-
-
-
-
-
-
             cartVO.setTotalPrice(cartVO.getPrice() * cartVO.getQuantity());
         }
+        int i = 0;
+        i++;
+        i=i*5;
         return cartVOS;
     }
 
