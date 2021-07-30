@@ -28,12 +28,16 @@ public class CartServiceImpl implements CartService {
 
     @Override
     public List<CartVO> list(Integer userId) {
-        // cart表示id为userid用户的购物车中的一件商品
-        //购物车就是id为userid用户挑选出的商品集合
         List<CartVO> cartVOS = cartMapper.selectList(userId);
         //CartVO中totalPrice字段没有值
         for (int i = 0; i < cartVOS.size(); i++) {
             CartVO cartVO = cartVOS.get(i);
+
+
+
+
+
+
             cartVO.setTotalPrice(cartVO.getPrice() * cartVO.getQuantity());
         }
         return cartVOS;
